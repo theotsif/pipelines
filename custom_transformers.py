@@ -38,7 +38,6 @@ class NullsColRemoval(BaseEstimator, TransformerMixin):
             self.null_bool = np.sum(pd.isnull(X), axis=0) / X.shape[0] >= self.threshold
         else:
             self.null_bool = np.sum(np.isnan(X), axis=0) / X.shape[0] >= self.threshold
-        print("hello")
         return self
 
     def transform(self, X, y=None):
